@@ -13,7 +13,7 @@ COPY . /app
 WORKDIR /app
 
 
-RUN uv sync 
+RUN uv sync --no-dev
 
 
 CMD ["./.venv/bin/python", "main.py"]

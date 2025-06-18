@@ -1,4 +1,9 @@
 
 
+.git
+.__pycache__
+.python-version
+.ruff_cache
+
 .venv
 ./.venv
