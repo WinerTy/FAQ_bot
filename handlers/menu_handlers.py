@@ -1,5 +1,5 @@
 from aiogram import Router, F
-from aiogram.types import Message, FSInputFile
+from aiogram.types import Message, FSInputFile, InputMediaDocument
 from data import ALL_QUESTIONS, FAQ_BY_QUESTION
 
 router = Router()
@@ -12,9 +12,23 @@ async def process_question_press(message: Message):
         if answer_item.faq_type == "text":
             await message.answer(answer_item.answer, parse_mode="HTML")
         elif answer_item.faq_type == "document":
-            answer_file = FSInputFile(answer_item.file_path)
-            await message.answer_document(
-                answer_file, caption=answer_item.answer, parse_mode="HTML"
-            )
+            print(answer_item.file_paths)
+            if len(answer_item.file_paths) == 1:
+                await message.answer_document(
+                    FSInputFile(answer_item.file_paths[0]),
+                    caption=answer_item.answer,
+                    parse_mode="HTML",
+                )
+            else:
+                media = []
+                for i, file_path in enumerate(answer_item.file_paths):
+                    media.append(
+                        InputMediaDocument(
+                            media=FSInputFile(file_path),
+                            parse_mode="HTML",
+                        )
+                    )
+                await message.answer_media_group(media=media)
+                await message.answer(answer_item.answer, parse_mode="HTML")
     else:
         await message.answer("Извините, не могу найти ответ на этот вопрос.")

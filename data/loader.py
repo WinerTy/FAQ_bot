@@ -9,16 +9,17 @@ class FAQItem(BaseModel):
     question: str
     answer: str
     faq_type: Literal["text", "document"]
-    file_path: Optional[str] = None
+    file_paths: Optional[List[str]] = None
 
-    @field_validator("file_path", mode="after")
+    @field_validator("file_paths", mode="after")
     @classmethod
-    def validate_file_path(cls, value: str, info):
+    def validate_file_paths(cls, value, info):
         if info.data.get("faq_type") == "document":
             if not value:
                 raise ValueError("file_path is required for document type FAQ")
-            if not os.path.exists(value):
-                raise ValueError(f"File not found: {value}")
+            for path in value:
+                if not os.path.exists(path):
+                    raise ValueError(f"File does not exist: {path}")
         if info.data.get("faq_type") == "text" and value:
             raise ValueError("file_path should not be provided for text type FAQ")
         return value

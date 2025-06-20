@@ -22,13 +22,13 @@
     "question": "📂 Как использовать пример из файла example.txt?",
     "faq_type": "document",
     "answer": "Вот ваш пример получения файла.",
-    "file_path": "media/example.txt"
+    "file_paths": ["media/example.txt"]
   },
   {
     "id": "how_example_pdf",
     "question": "📄 Как использовать пример из файла example.pdf?",
     "faq_type": "document",
     "answer": "Вот ваш пример получения файла.",
-    "file_path": "media/example.pdf"
+    "file_paths": ["media/example.pdf","media/example.pdf"]
   }
 ]
