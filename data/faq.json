@@ -1,34 +1,63 @@
 [
   {
-    "id": "what_is_aiogram",
-    "question": "❓ Что такое Aiogram?",
-    "faq_type": "text",
-    "answer": "<b>Aiogram</b> — это современная, полностью асинхронная библиотека для создания Telegram-ботов на Python."
+    "id": "work_commissioners",
+    "question": "О работе уполномоченного",
+    "faq_type": "submenu",
+    "answer": [
+      {
+        "id": "activity",
+        "question": "Направление деятельности",
+        "faq_type": "document",
+        "answer": "",
+        "file_paths": ["media/activity.pdf"]
+      },
+      {
+        "id": "recommendations",
+        "question": "Рекомендации по работе",
+        "faq_type": "document",
+        "answer": "",
+        "file_paths": ["media/recommendations.pdf"]
+      }
+    ]
   },
   {
-    "id": "how_to_start",
-    "question": "🚀 Как начать?",
-    "faq_type": "text",
-    "answer": "Чтобы начать, отправьте команду /start и выберите интересующий вас вопрос из меню."
-  },
-  {
-    "id": "where_to_find_docs",
-    "question": "📚 Где найти документацию?",
-    "faq_type": "text",
-    "answer": "Официальную документацию можно найти по адресу: <a href='https://docs.aiogram.dev/'>docs.aiogram.dev</a>"
-  },
-  {
-    "id": "how_example_txt",
-    "question": "📂 Как использовать пример из файла example.txt?",
+    "id": "recommendations_of_sout",
+    "question": "Рекомендации СоУт",
     "faq_type": "document",
-    "answer": "Вот ваш пример получения файла.",
-    "file_paths": ["media/example.txt"]
+    "answer": "Рекомендации СоУт по безопасной эксплуатации оборудования и машин.",
+    "file_paths": ["media/recommendations_of_sout.pdf"]
   },
   {
-    "id": "how_example_pdf",
-    "question": "📄 Как использовать пример из файла example.pdf?",
+    "id": "accident_recommendations",
+    "question": "Рекомендации по действиям при несчастных случаях",
     "faq_type": "document",
-    "answer": "Вот ваш пример получения файла.",
-    "file_paths": ["media/example.pdf","media/example.pdf"]
+    "answer": "",
+    "file_paths": ["media/accident_recommendations.pdf"]
+  },
+  {
+    "id": "exchange_of_experience",
+    "question": "Обмен опытом",
+    "faq_type": "text",
+    "answer": "<a href='https://example.com'>Обмен опытом</a> - это важный аспект работы уполномоченного по охране труда. Он позволяет делиться знаниями и лучшими практиками для повышения безопасности на рабочем месте."
+  },
+  {
+    "id": "new_in_safety",
+    "question": "Новое в охране труда",
+    "faq_type": "document",
+    "answer": "",
+    "file_paths": ["media/new_in_safety.pdf"]
+  },
+  {
+    "id": "tutorial",
+    "faq_type": "document",
+    "question": "Обучение",
+    "answer": "",
+    "file_paths": ["media/tutorial.pdf"]
+  },
+  {
+    "id": "have_question",
+    "question": "Есть вопросы? Звони!",
+    "faq_type": "text",
+    "answer": "Если у вас есть вопросы, вы можете обратиться к нам по телефону:\n\n Ю.В. Русее: <a href='tel:1234567890'>1234567890</a>\n\n С.П Стамкевич: <a href='tel:0987654321'>0987654321</a>\n"
   }
 ]
