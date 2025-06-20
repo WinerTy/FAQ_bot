@@ -12,7 +12,6 @@ async def process_question_press(message: Message):
         if answer_item.faq_type == "text":
             await message.answer(answer_item.answer, parse_mode="HTML")
         elif answer_item.faq_type == "document":
-            print(answer_item.file_paths)
             if len(answer_item.file_paths) == 1:
                 await message.answer_document(
                     FSInputFile(answer_item.file_paths[0]),
